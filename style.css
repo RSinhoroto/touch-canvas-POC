@@ -1,4 +1,32 @@
-#paint-canvas {
-    border: 1px solid black;
+body {
+  position: fixed; 
+  overflow: hidden;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
+#paint-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#paint-canvas {
+  border: 5px solid #142850;
+  border-radius: 10px;
+}
+
+#canvas-description {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#clear-button {
+  width: 80px;
+  height: 30px;
+  border: 1px solid #142850;
+  color: #142850;
+  border-radius: 5px;
+}

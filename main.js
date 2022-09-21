@@ -2,7 +2,14 @@ let canvas = document.getElementById("paint-canvas")
 let ctx = canvas.getContext("2d")
 ctx.fillStyle = "white"
 var previousPosition = {x:0, y:0}
-    
+
+const w = document.documentElement.clientWidth
+const h = document.documentElement.clientHeight
+
+canvas.width = 0.9*w
+canvas.height = 0.8*h
+
+
 canvas.addEventListener("touchstart", (e) => {
     previousPosition = {x: e.touches[0].clientX, y: e.touches[0].clientY}
 })
@@ -18,5 +25,5 @@ canvas.addEventListener("touchmove", (e) => {
 
 let clearButton = document.getElementById('clear-button')
 clearButton.addEventListener('click', () => {
-    ctx.clearRect(0,0,300,400)
+    ctx.clearRect(0,0,w,h)
 })
