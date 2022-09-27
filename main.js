@@ -11,23 +11,26 @@ var imageData = []
 const w = document.documentElement.clientWidth
 const h = document.documentElement.clientHeight
 
+var deltaW = w*0.05
+
+
 canvas.width = 0.9*w
 canvas.height = 0.8*h
 
 
 canvas.addEventListener("touchstart", (e) => {
-    previousPosition = {x: e.touches[0].clientX - (window.screen.width - w)/2,
+    previousPosition = {x: e.touches[0].clientX - deltaW,
                         y: e.touches[0].clientY}
 })
 
 canvas.addEventListener("touchmove", (e) => {
     ctx.beginPath()
     ctx.moveTo(previousPosition.x, previousPosition.y)
-    ctx.lineTo(e.touches[0].clientX - (window.screen.width - w)/2,
+    ctx.lineTo(e.touches[0].clientX - deltaW,
                e.touches[0].clientY)
     ctx.stroke()
     ctx.closePath()
-    previousPosition = {x: e.touches[0].clientX - (window.screen.width - w)/2,
+    previousPosition = {x: e.touches[0].clientX - deltaW,
                         y: e.touches[0].clientY}
 })
 
